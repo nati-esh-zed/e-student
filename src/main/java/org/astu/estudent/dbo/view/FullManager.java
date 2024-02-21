@@ -4,9 +4,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ManagerUserDepartmentSchool {
+public class FullManager {
 
-    public static String TABLE = "ViewManagerUserDepartmentSchool"; 
+    public static String TABLE = "FullViewManager"; 
 
     public Integer idUser;
     public Integer idDepartment;
@@ -23,8 +23,8 @@ public class ManagerUserDepartmentSchool {
     public String  schoolName;
     public String  schoolShortCode;
 
-    public static ManagerUserDepartmentSchool fromResult(ResultSet rSet) throws SQLException {
-        ManagerUserDepartmentSchool mUserDepartmentSchool = new ManagerUserDepartmentSchool();
+    public static FullManager fromResultSet(ResultSet rSet) throws SQLException {
+        FullManager mUserDepartmentSchool = new FullManager();
         mUserDepartmentSchool.idUser              = rSet.getInt("idUser");
         mUserDepartmentSchool.idDepartment        = rSet.getInt("idDepartment");
         mUserDepartmentSchool.idSchool            = rSet.getInt("idSchool");
@@ -42,7 +42,7 @@ public class ManagerUserDepartmentSchool {
         return mUserDepartmentSchool;
     }
     
-    public static void setPrepared(PreparedStatement pStatement, ManagerUserDepartmentSchool mUserDepartmentSchool) throws SQLException {
+    public static void setPrepared(PreparedStatement pStatement, FullManager mUserDepartmentSchool) throws SQLException {
         int i = 0;
         pStatement.setInt(++i, mUserDepartmentSchool.idUser);
         pStatement.setInt(++i, mUserDepartmentSchool.idDepartment);

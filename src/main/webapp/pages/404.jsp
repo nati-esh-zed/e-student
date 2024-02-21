@@ -1,6 +1,7 @@
 
 <div>
     <div class="alert alert-danger">
-        <span class="h4">404</span> <span class="h6">Page not found!</span>
+        <h4 class="alert-heading">Error 404:</h4>
+        <p class="mb-0">page not found!</p>
     </div>
 </div>
