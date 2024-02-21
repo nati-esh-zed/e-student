@@ -1,0 +1,100 @@
+
+table.table-custom {
+    --table-border-radius: .5em;
+    --table-bg-accent: #f97278;
+    --table-bg-accent: #deff67;
+    --table-bg-accent: #ffb967;
+    --table-bg-accent: #5eb94d;
+    --table-bg-accent: #72b5f9;
+    --table-bg-accent: #e0efff;
+    --table-bg-th: var(--table-bg-accent);
+    --table-bg-td: hsl(from var(--table-bg-accent) h calc(s*.6) 92%);
+    --table-bg-td-hover: hsl(from var(--table-bg-accent) h calc(s*.5) 97%);
+    --table-border-color: hsl(from var(--table-bg-accent) h calc(s*.25) 75%);
+    border-collapse: collapse;
+    background-color: var(--table-border-color);
+    width: 100%;
+}
+table.table-custom * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+table.table-custom th,
+table.table-custom td {
+    margin: 0;
+    padding: .5em .75em;
+}
+
+table.table-spaced {
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+table.table-custom thead th {
+    background-color: var(--table-bg-th);
+}
+table.table-custom tbody td {
+    background-color: var(--table-bg-td);
+}
+table.table-custom tbody tr:hover td {
+    background-color: var(--table-bg-td-hover);
+}
+
+table.table-bordered-inside-x > tr:not(:last-child) th,
+table.table-bordered-inside-x thead tr th,
+table.table-bordered-inside-x tr:not(:last-child) td {
+    border-bottom: 1px solid var(--table-border-color);
+}
+table.table-bordered-inside-y th:not(:last-child),
+table.table-bordered-inside-y td:not(:last-child) {
+    border-right: 1px solid var(--table-border-color);
+}
+
+table.table-rounded {
+    border-radius: var(--table-border-radius);
+}
+table.table-rounded tr:first-child th:nth-of-type(1),
+table.table-rounded tr:first-child th:nth-of-type(1) * {
+    border-top-left-radius: var(--table-border-radius);
+}
+table.table-rounded tr:first-child th:nth-last-of-type(1),
+table.table-rounded tr:first-child th:nth-last-of-type(1) * {
+    border-top-right-radius: var(--table-border-radius);
+}
+table.table-rounded tr:last-child td:nth-of-type(1),
+table.table-rounded tr:last-child td:nth-of-type(1) * {
+    border-bottom-left-radius: var(--table-border-radius);
+}
+table.table-rounded tr:last-child td:nth-last-of-type(1),
+table.table-rounded tr:last-child td:nth-last-of-type(1) * {
+    border-bottom-right-radius: var(--table-border-radius);
+}
+
+table.table-p-0 th,
+table.table-p-0 td    { padding: 0; }
+table.table-th-p-0 th { padding: 0; }
+table.table-td-p-0 td { padding: 0; }
+
+table.table-p-1 th,
+table.table-p-1 td    { padding: .25rem; }
+table.table-th-p-1 th { padding: .25rem; }
+table.table-td-p-1 td { padding: .25rem; }
+
+table.table-p-2 th,
+table.table-p-2 td    { padding: .5rem; }
+table.table-th-p-2 th { padding: .5rem; }
+table.table-td-p-2 td { padding: .5rem; }
+
+table.table-p-3 th,
+table.table-p-3 td    { padding: 1rem; }
+table.table-th-p-3 th { padding: 1rem; }
+table.table-td-p-3 td { padding: 1rem; }
+
+table.table-custom input.table-input {
+    margin: 0;
+    padding: .25rem;
+    border: none;
+    border-radius: 0;
+    appearance: none;
+}
