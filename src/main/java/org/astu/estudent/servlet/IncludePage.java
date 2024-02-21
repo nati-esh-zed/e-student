@@ -16,6 +16,7 @@ public class IncludePage extends HttpServlet {
     {
         String page = (String)request.getParameter("page");
         if(page != null) {
+            page = page.replace(".", "/");
             try {
                 request.getRequestDispatcher("pages/"+page+".jsp").include(request, response);
             } catch(ServletException ex) {

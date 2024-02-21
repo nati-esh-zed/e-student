@@ -21,6 +21,8 @@ public class Logout extends HttpServlet {
     {
         try {
             HttpSession session = request.getSession();
+            session.removeAttribute("user");
+            session.removeAttribute("isLoggedIn");
             session.invalidate();
         }
         catch(Exception ex) { 

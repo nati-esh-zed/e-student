@@ -24,15 +24,5 @@
         <url-pattern>/IncludePage</url-pattern>
         <servlet-name>IncludePage</servlet-name>
     </servlet-mapping>
-    <!-- Mock -->
-    <servlet>
-        <servlet-name>Mock</servlet-name>
-        <servlet-class>org.astu.estudent.servlet.Mock</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <url-pattern>/Mock</url-pattern>
-        <servlet-name>Mock</servlet-name>
-    </servlet-mapping>
-
 
 </web-app>

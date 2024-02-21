@@ -14,39 +14,39 @@
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link <%= activeLink("Home", request) %>" href="<%=Site.ROOT%>?page=Home">
-              <i class="fa-solid fa-house"></i>
+              <%-- <i class="fa-solid fa-house"></i> --%>
               Home
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link <%=activeLink("About", request)%>" href="<%=Site.ROOT%>?page=About">
-              <i class="fa-solid fa-info"></i>
+              <%-- <i class="fa-solid fa-info"></i> --%>
               About
             </a>
           </li>
-        <% if(isLoggedIn(request)) { %>
+        <% if(isLoggedIn(request) && getUser(request) != null) { %>
           <%-- <li class="nav-item"><a class="nav-link" href="ListUsers">Users</a></li> --%>
           <li class="nav-item"><a class="nav-link" href="RegisterTeacher"></a></li>
-          <%-- <% if(getUser(request).type.equls("manager")) { %>
+          <% if(getUser(request).type.equals("manager")) { %>
           <li key="teacher" class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Teacher
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                   <li>
-                    <a class="dropdown-item" href="RegisterTeacher">
+                    <a class="dropdown-item" href="<%=Site.ROOT%>?page=teacher.Register">
                       Register
                     </a>
                   </li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
-                    <a class="dropdown-item" href="ListTeachers">
+                    <a class="dropdown-item" href="<%=Site.ROOT%>?page=teacher.List">
                       List
                     </a>
                   </li>
               </ul>
           </li>
-          <% } %> --%>
+          <% } %>
         <% } else { %>
         <% } %>
         </ul>

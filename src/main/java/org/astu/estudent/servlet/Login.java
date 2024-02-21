@@ -35,10 +35,12 @@ public class Login extends HttpServlet {
             } else {
                 ConnectionManager man = new ConnectionManager();
                 String sql1 = String.format("SELECT * FROM `%s` WHERE `email`=? AND `password`=? LIMIT 1", User.TABLE);
-                String sql2 = String.format("SELECT * FROM `%s` WHERE `IdUser`=? LIMIT 1", FullManager.TABLE);
+                String sql2 = String.format("SELECT * FROM `%s` WHERE `IdUser`=? LIMIT 1", ManagerUser.TABLE);
+                String sql3 = String.format("SELECT * FROM `%s` WHERE `IdUser`=? LIMIT 1", FullManager.TABLE);
                 try(Connection con = man.getConnection();
                     PreparedStatement pst1 = con.prepareStatement(sql1); 
                     PreparedStatement pst2 = con.prepareStatement(sql2);
+                    PreparedStatement pst3 = con.prepareStatement(sql3);
                 ) {
                     ResultSet rSet;
                     pst1.setString(1, email);
@@ -52,8 +54,12 @@ public class Login extends HttpServlet {
                             ResultSet rSet2 = pst2.executeQuery();
                             if(rSet2.next()) {
                                 ManagerUser managerUser = ManagerUser.fromResultSet(rSet2);
-                                FullManager fullManager = FullManager.fromResultSet(rSet2);
                                 session.setAttribute("managerUser", managerUser);
+                            }
+                            pst3.setInt(1, user.idUser);
+                            ResultSet rSet3 = pst3.executeQuery();
+                            if(rSet3.next()) {
+                                FullManager fullManager = FullManager.fromResultSet(rSet3);
                                 session.setAttribute("fullManager", fullManager);
                             }
                         }

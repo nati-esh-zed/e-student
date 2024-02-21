@@ -27,3 +27,6 @@
     }
 
 %>
+
+<%-- if invalid loggin state invalidate session --%>
+<% if(isLoggedIn(request) && getUser(request) == null) { session.invalidate(); } %>

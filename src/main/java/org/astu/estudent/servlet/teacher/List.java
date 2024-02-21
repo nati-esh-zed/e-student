@@ -1,4 +1,4 @@
-package org.astu.estudent.servlet;
+package org.astu.estudent.servlet.teacher;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.astu.estudent.dbo.ConnectionManager;
 
-@WebServlet("/Mock")
-public class Mock extends HttpServlet {
+@WebServlet("/teacher/List")
+public class List extends HttpServlet {
     
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) 

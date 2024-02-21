@@ -31,6 +31,6 @@
         </form>
     </div>
     <% } else { 
-        response.sendRedirect("");
+        response.sendRedirect(Site.ROOT);
     } %>
 </div>
