@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app
-        xmlns = "https://jakarta.ee/xml/ns/jakartaee"
+        xmlns = "https://javax.ee/xml/ns/jakartaee"
         xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation = "https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+        xsi:schemaLocation = "https://javax.ee/xml/ns/jakartaee https://javax.ee/xml/ns/jakartaee/web-app_5_0.xsd"
         version = "5.0"
         metadata-complete = "false"
 >
@@ -15,15 +15,24 @@
     </servlet-mapping>  
 
     <!-- Servlets and Mappings -->
-    <!-- Index -->
-    <!-- <servlet>
-        <servlet-name>Index</servlet-name>
-        <servlet-class>org.astu.estudent.servlet.Index</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet> -->
-    <!-- <servlet-mapping>
-        <url-pattern>/</url-pattern>
-        <servlet-name>Index</servlet-name>
-    </servlet-mapping> -->
+    <!-- IncludePage -->
+    <servlet>
+        <servlet-name>IncludePage</servlet-name>
+        <servlet-class>org.astu.estudent.servlet.IncludePage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <url-pattern>/IncludePage</url-pattern>
+        <servlet-name>IncludePage</servlet-name>
+    </servlet-mapping>
+    <!-- Mock -->
+    <servlet>
+        <servlet-name>Mock</servlet-name>
+        <servlet-class>org.astu.estudent.servlet.Mock</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <url-pattern>/Mock</url-pattern>
+        <servlet-name>Mock</servlet-name>
+    </servlet-mapping>
+
 
 </web-app>

@@ -1,6 +1,6 @@
 package org.astu.estudent;
 
-public class Server {
+public class Site {
 
     public static String ROOT = "/e-student/";
 
